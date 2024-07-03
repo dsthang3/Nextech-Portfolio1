@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Thang - Portfolio</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+    <div class="backButtonDiv">
+        <button class="backButton button freezeMe">Back</button>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1 class="headerName">David Thang</h1>
+        </div>
+    </header>
+
+    <div class="navButtons">
+        <button class="aboutMeButton button freezeMe">About Me</button>
+        <a href="#projectsTakeHere">
+            <button class="projectsButton button freezeMe">Projects</button>
+        </a>
+        <button class="contactButton button freezeMe">Contact</button>
+    </div>
+
+    <div class="sourcesButtonDiv">
+        <button class="sourcesButton button freezeMe">
+            Sources
+        </button>
+    </div>
+
+
+    <div class="bigContainer">
+        <div class="contact-container" id="contactForm">
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                <input type="hidden" name="access_key" value="cb5b094c-241b-4cd5-b0d2-20022d3dea35">
+                <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+                <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
+                <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+        <div class="socialsDiv">
+            <a target="_blank" href="https://www.instagram.com/davidsiangukthangalang/">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/264px-Instagram_logo_2016.svg.png?20210403190622">
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/david-thang-62835b315/">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png">
+            </a>
+            
+        </div>
+    </div>
+
+
+    <script defer src="contact.js"></script>
+</body>
+
+</html>

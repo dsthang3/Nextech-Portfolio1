@@ -1,0 +1,329 @@
+:root {
+    --width: 1000px;
+    --height: 300px;
+    --buildingColor: #E8E4C9;
+    --accentColor: #B0A875;
+    --columnColor: #D4C59E;
+    --friezeColor: #8B7E4E;
+    --friezePattern: url('https: //lh5.googleusercontent.com/WxrPVQaHe924e_LyzZZiacMhVLAzuSOBtwcBOiqWMB1WJBRyRc6P32YLVEssFJ8Neix68psrJSV75GPBSbC32jUf18lLHdmidroRWzlVUBsl1nRAH5DaIzSZVV0kLhejmpw9V8Ycol6VbJDZ3vVKLmvkGqqy6XwS_eoxB6Mu7BPHEBipo9vVYTy8mjYV');
+    /* Replace with actual pattern image path */
+    --zoomInAfterThisSeconds: 6s;
+}
+
+body {
+    background-color: #F3F3F3;
+    font-family: Courier, monospace;
+    margin: 0;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll bar */
+}
+
+.scrollContainer {
+    display: flex;
+    width: 200vw;
+    /* Double the viewport width for horizontal scroll */
+    height: 100vh;
+    align-items: center;
+    position: relative;
+}
+
+.libraryContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    animation: zoomInMiddle 3s forwards 5s
+}
+
+.libraryParts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border: 2px solid var(--accentColor);
+    padding: 20px;
+    background-color: #FFFFFF;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.libraryRoof {
+    width: var(--width);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    transform: translateY(-100px);
+    opacity: 0;
+    animation: slideDown 1s forwards 1s;
+}
+
+.roofRoof {
+    width: 50%;
+    border-left: 500px solid transparent;
+    border-right: 500px solid transparent;
+    border-bottom: 125px solid var(--buildingColor);
+}
+
+.libraryFrieze {
+    width: 800px;
+    height: 50px;
+    background-color: var(--friezeColor);
+    background-image: var(--friezePattern);
+    background-repeat: repeat-x;
+    margin-top: -20px;
+    /* To overlap with the roof */
+    border-top: 2px solid var(--accentColor);
+    border-bottom: 2px solid var(--accentColor);
+    transform: scale(0);
+    opacity: 0;
+    animation: friezeExpand 2s forwards 2.5s;
+}
+
+/* middle! */
+.libraryMiddle {
+    width: 800px;
+    height: 450px;
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(to bottom, var(--buildingColor) 80%, var(--accentColor) 20%);
+    border-top: 2px solid var(--accentColor);
+    padding-top: 10px;
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: middleRise 1s forwards 1s;
+    /* zoomInMiddle 3s ease var(--zoomInAfterThisSeconds); */
+    animation-fill-mode: forwards;
+
+}
+
+.column {
+    width: 80px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--columnColor);
+    border: 1px solid var(--accentColor);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(100px);
+    animation: columnRise 3s forwards,
+        middleRise 1s forwards 1s;
+    position: relative;
+    /* make columns disappear is here */
+    /* For pseudo-elements */
+}
+
+.column:nth-child(1) {
+    animation-delay: 1.0s;
+}
+
+.column:nth-child(2) {
+    animation-delay: 1.2s;
+}
+
+.column:nth-child(3) {
+    animation-delay: 1.4s;
+}
+
+.column:nth-child(4) {
+    animation-delay: 1.6s;
+}
+
+.column:nth-child(5) {
+    animation-delay: 1.8s;
+}
+
+.column::before,
+.column::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--accentColor);
+    opacity: 0.5;
+}
+
+.column::before {
+    left: 10%;
+}
+
+.column::after {
+    right: 10%;
+}
+
+.columnTop,
+.columnMiddle,
+.columnBottom {
+    background-color: var(--columnColor);
+    /* this is the column colorings */
+    border: 1px solid var(--accentColor);
+    height: 33%;
+    opacity: 0;
+    animation: fadeIn 0s forwards;
+}
+
+.columnTop {
+    animation-delay: 0s;
+}
+
+.columnMiddle {
+    animation-delay: 0s;
+}
+
+.columnBottom {
+    animation-delay: 0s;
+}
+
+.libraryBase {
+    width: var(--width);
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    border-top: 2px solid var(--accentColor);
+    background-color: var(--accentColor);
+    transform: translateY(100px);
+    opacity: 0;
+    animation: baseRise 2s forwards 2s;
+}
+
+.baseTop {
+    width: 85%;
+    height: 50%;
+    background-color: var(--buildingColor);
+    align-self: center;
+    border: 1px solid var(--accentColor);
+    transform: translateY(-50px);
+    opacity: 0;
+    animation: baseTopRise 1s forwards 2s;
+}
+
+.baseBottom {
+    width: 100%;
+    height: 50%;
+    background-color: var(--buildingColor);
+    border-top: 2px solid var(--accentColor);
+    position: relative;
+}
+
+.nextSection {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+}
+
+@keyframes friezeExpand {
+    from {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes middleRise {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes columnRise {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes baseRise {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes baseTopRise {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomInMiddle {
+    0% {
+        z-index: 999;
+    }
+
+    100% {
+        transform: scale(20);
+        z-index: 999;
+    }
+}
+
+@keyframes columnDisappear {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.libraryTitle {
+    color: white;
+    font-size: 32.5px;
+    text-align: center;
+    font-family: Courier, monospace;
+    font-weight: bold;
+}

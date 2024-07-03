@@ -1,0 +1,189 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+body {
+    opacity: 0;
+    font-family: Arial, sans-serif;
+    background-color: #E8E4C9;
+    animation: bodyFadeIn 1s forwards 0s;
+    height: 3000px;
+}
+
+@keyframes bodyFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 10px auto;
+    padding: 0 20px;
+}
+
+.headerName {
+    width: fit-content;
+    font-size: 125px;
+    color: black;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    background-color: #e6e0be;
+    opacity: 1;
+}
+
+.backButtonDiv,
+.navButtons {
+    margin: 10px;
+}
+
+.button {
+    margin: 10px;
+
+    cursor: pointer;
+    align-self: center;
+    background-color: #e9e6c4;
+    background-image: none;
+    background-position: 0 90%;
+    background-repeat: repeat no-repeat;
+    background-size: 4px 3px;
+    border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+    box-sizing: border-box;
+    color: #41403e;
+    display: inline-block;
+    font-family: Neucha, sans-serif;
+    font-size: 1rem;
+    line-height: 23px;
+    outline: none;
+    padding: .75rem;
+    text-decoration: none;
+    transition: all 235ms ease-in-out;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+    z-index: 999;
+}
+
+.freezeMe {
+    position: fixed;
+    top: 50px;
+}
+
+.aboutMeButton {
+    left: 1100px;
+}
+
+.projectsButton {
+    left: 1200px;
+}
+
+.contactButton {
+    left: 1290px;
+}
+.sourcesButton {
+    position: absolute;
+    left: 1377px;
+}
+
+.contact-container {
+    
+    margin: 50px;
+    padding: 20px;
+    background-color: #f9f6f1;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+    width: 800px;
+    position: relative;
+    left: 13%;
+    top: 70px;
+}
+/* .bigContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+} */
+ .bigContainer {
+    display: flex;
+ }
+ .socialsDiv {
+    display: flex;
+    flex-direction: column;
+ }
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-inputs {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+img {
+    position: relative;
+    width: 100px;
+    margin: 35px;
+    z-index: 100;
+    left: 400px;
+    top: 100px;
+    cursor: pointer;
+}
+.submit-button {
+    margin: 10px;
+    width: 90%;
+    cursor: pointer;
+    align-self: center;
+    background-color: #e9e6c4;
+    background-image: none;
+    background-position: 0 90%;
+    background-repeat: repeat no-repeat;
+    background-size: 4px 3px;
+    border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+    border-style: solid;
+    border-width: 2px;
+    box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+    box-sizing: border-box;
+    color: #41403e;
+    display: inline-block;
+    font-family: Neucha, sans-serif;
+    font-size: 1rem;
+    line-height: 23px;
+    outline: none;
+    padding: .75rem;
+    text-decoration: none;
+    transition: all 235ms ease-in-out;
+    border-bottom-left-radius: 15px 255px;
+    border-bottom-right-radius: 225px 15px;
+    border-top-left-radius: 255px 15px;
+    border-top-right-radius: 15px 225px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+    z-index: 999;
+}
+
+/* Add any additional CSS styles for the form aesthetic */
